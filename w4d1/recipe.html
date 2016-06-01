@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <title>Shamayel's Recipe</title>
+    <meta name="description" content="The best, most delicious recipe for Cottage Pie, a variation of Shepherd's Pie with ground beef, vegetables, and gravy, topped with mashed potatoes and cheese.">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css_reset.css" type="text/css">
+
+    <script type="text/javascript" src="external-javascript-example.js"/>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-12345678-9', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body>
+    <header>
+    <h1>Cottage Pie</h1>
+    <img src="https://s3-media2.fl.yelpcdn.com/bphoto/JdBy-N_Xgypi_3SZ1OLOMw/ls.jpg">
+
+    <h2>A recipe for making cottage pie!</h2>
+      <nav>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#ingredients">Ingredients</a></li>
+        <li><a href="#directions">Directions</a></li>
+      </ul>
+      </nav>
+    </header>
+
+    <aside>
+      <a name="ingredients"/>
+      <h2>Ingredients!</h2>
+      <p>For the meat:</p>
+      <ul>
+        <li>1 lb ground beef</li>
+        <li>1 onion</li>
+        <li>1 carrot</li>
+        <li>2 celery stalks</li>
+        <li>Peas</li>
+        <li>Corn</li>
+        <li>4-5 cloves garlic</li>
+        <li>Ketchup</li>
+        <li>2 tbsp flour</li>
+        <li>Red wine</li>
+        <li>1 can beef broth</li>
+        <li>Worchestershire sauce</li>
+        <li>Rosemary</li>
+        <li>Thyme</li>
+        <li>Bay leaf</li>
+        <li>Salt</li>
+        <li>Pepper</li>
+      </ul>
+      <p>For the potatoes:</p>
+      <ul>
+        <li>3-4 potatoes</li>
+        <li>3 cloves garlic</li>
+        <li>Butter</li>
+        <li>Cream</li>
+        <li>Salt</li>
+        <li>Pepper</li>
+        <li>Cheddar cheese</li>
+      </ul>
+    </aside>
+
+    <section>
+      <figure>
+        <img src="http://media-cache-ec0.pinimg.com/736x/1b/b5/d1/1bb5d1395e218dae1f78466492551c67.jpg">
+      </figure>
+      <figcaption>
+        <a href="https://en.wikipedia.org/wiki/Cottage_pie">Cottage Pie</a>
+      </figcaption>
+
+      <a name="description"/>
+      <h2>Description!</h2>
+      <p>Cottage pie is a delicious meat pie with a mashed potato topping. It is a variation of shepherd's pie, but where shepherd's pie uses lamb or mutton (thus shepherd!), cottage pie is made with beef instead. Meat is cooked down with vegetables into a gravy and then mashed potatoes are placed on top.</p>
+
+      <a name="directions"/>
+      <h2>Directions!</h2>
+      <ol>
+        <li>Brown the ground beef and set aside.</li>
+        <li>Dice the onion, celery, and carrots. Sweat in a pan until everything is soft and onions are translucent, approximately 20 minutes.</li>
+        <li>Add peas and corn and let them cook through. Turn up heat, add garlic.</li>
+        <li>Add a few squeezes of a sugar-free ketchup and the flour to thicken the gravy. Fry it all up.</li>
+        <li>Add the meat back to the pan. Deglaze with wine and cook down.</li>
+        <li>Add the beef broth, a few dashes of worchestershire sauce, 3-4 pinches of rosemary, many dashes of thyme, and a bay leaf. Salt and pepper to taste.</li>
+        <li>Simmer for 45 minutes. Add more flour to thicken if needed.</li>
+        <li>Meanwhile, boil the potatoes and garlic.</li>
+        <li>Drain and mash the potatoes. Add butter, cream, salt, and pepper, to desired consistency and taste.</li>
+        <li>Put meat in a baking dish. Top with potatoes and grated cheese.</li>
+        <li>Bake for 25 minutes at 400 degrees.</li>
+        <li>Let cool and enjoy!</li>
+      </ol>
+    </section>
+
+    <section id="reviews">
+      <form id="review-form" action="/reviews" method="post">
+
+        <label for="reviewer_name">Name</label>
+        <input type="text" name="reviewer_name" id="reviewer_name">
+        <br>
+        <br>
+        <label for="rating">Rating</label>
+        <br>
+        1<input type="radio" name="rating" value="1" checked>
+        <br>
+        2<input type="radio" name="rating" value="2">
+        <br>
+        3<input type="radio" name="rating" value="3">
+        <br>
+        4<input type="radio" name="rating" value="4">
+        <br>
+        5<input type="radio" name="rating" value="5">
+        <br>
+        <br>
+        <label for="cooking_exp">Cooking Expertise</label>
+        <select id="cooking_exp" name="cooking_exp">
+          <option value="select" disabled="true" selected="true">Select Cooking Expertise</option>
+          <option value="sometimes">Sometimes Cook</option>
+          <option value="everyday">Cook Everyday</option>
+          <option value="hobby">Cooking is a Hobby</option>
+          <option value="pro">Professional Chef</option>
+        </select>
+        <br>
+        <br>
+        <label>Review
+          <textarea name="review"></textarea>
+        </label>
+        <br>
+        <input type="submit" value="Submit Review">
+      </form>
+    </section>
+
+    <footer>
+    <p>Credit for the recipe goes to me! :D </p>
+    </footer>
+  </body>
+</html>

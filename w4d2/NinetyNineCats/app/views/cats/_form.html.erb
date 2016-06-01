@@ -1,0 +1,46 @@
+<% if cat.persisted? %>
+  <% action, method, button_text = cat_url(cat), "patch", "Update Cat" %>
+<% else %>
+  <% action, method, button_text = cats_url, "post", "Create Cat" %>
+<% end %>
+
+
+<form action='<%= action %>' method='post'>
+  <input type="hidden" name="_method" value="<%= method %>">
+
+  <label for="cat_name">Name: </label>
+  <input type="text" name='cat[name]' id="cat_name" value="<%= cat.name %>">
+
+  <br><br>
+
+  <label for='cat_sex'>Sex: </label>
+  F<input type="radio" name="cat[sex]" value="F" id="cat_sex">
+  M<input type="radio" name="cat[sex]" value="M" id="cat_sex">
+
+  <br><br>
+
+  <label for="cat_color">Color: </label>
+  <select name="cat[color]" id="cat_color">
+    <option disabled selected>Select One</option>
+    <option value="black">Black</option>
+    <option value="white">White</option>
+    <option value="orange">Orange</option>
+    <option value="grey">Grey</option>
+    <option value="brown">Brown</option>
+  </select>
+
+  <br><br>
+
+  <label for="cat_dob">DOB: </label>
+  <input type="date" name="cat[birth_date]" id="cat_dob">
+
+  <br><br>
+
+  <label for="cat_description">Description: </label>
+  <textarea name="cat[description]" id="cat_description"><%= cat.description %></textarea>
+
+  <br><br>
+
+  <input type="submit" value="<%= button_text %>">
+
+</form>
