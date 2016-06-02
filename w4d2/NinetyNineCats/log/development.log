@@ -4264,3 +4264,80 @@ Processing by CatsController#edit as HTML
   Rendered cats/_form.html.erb (0.3ms)
   Rendered cats/edit.html.erb within layouts/application (2.0ms)
 Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-06-01 20:42:03 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/roq/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 21ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats" for ::1 at 2016-06-01 20:42:14 -0700
+Processing by CatsController#index as HTML
+  [1m[35mCat Load (0.4ms)[0m  SELECT "cats".* FROM "cats"
+  Rendered cats/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 392ms (Views: 385.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cats/2" for ::1 at 2016-06-01 20:42:20 -0700
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCat Load (0.2ms)[0m  [1mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCatRentalRequest Load (0.6ms)[0m  SELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ?  [["cat_id", 2]]
+  Rendered cats/show.html.erb within layouts/application (92.2ms)
+Completed 200 OK in 114ms (Views: 103.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cat_rental_requests/new" for ::1 at 2016-06-01 20:42:29 -0700
+Processing by CatRentalRequestsController#new as HTML
+  [1m[36mCat Load (0.1ms)[0m  [1mSELECT "cats".* FROM "cats"[0m
+  Rendered cat_rental_requests/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/cats" for ::1 at 2016-06-01 20:42:53 -0700
+Processing by CatsController#index as HTML
+  [1m[35mCat Load (0.1ms)[0m  SELECT "cats".* FROM "cats"
+  Rendered cats/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/cats" for ::1 at 2016-06-01 20:54:26 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CatsController#index as HTML
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from index at /Users/roq/Documents/aa/w4/w4d2/NinetyNineCats/app/controllers/cats_controller.rb:5)
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.1ms)
+
+UserMailer#welcome_email: processed outbound mail in 161.4ms
+
+Sent mail to everybody@appacademy.io (21.4ms)
+Date: Wed, 01 Jun 2016 20:54:26 -0700
+From: from@example.com
+To: everybody@appacademy.io
+Message-ID: <574fadf29cae3_130953fd0661009c0375@Shamayels-MacBook-Pro.local.mail>
+Subject: Welcome!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <body>
+    <p>Wow! Welcome to 99 Cats!</p>
+
+    <p>Don't you love cats, everybody@appacademy.io? I know I do!</p>
+
+    <p>Check out all our great cats <a href=http://localhost:3000/cats>here!</a></p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  [1m[35mCat Load (0.3ms)[0m  SELECT "cats".* FROM "cats"
+  Rendered cats/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 529ms (Views: 314.0ms | ActiveRecord: 0.8ms)

@@ -1,6 +1,8 @@
 class CatsController < ApplicationController
   def index
     @cats = Cat.all
+    msg = UserMailer.welcome_email
+    msg.deliver
     render :index
   end
 
