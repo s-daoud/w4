@@ -1,0 +1,90 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ body{
+ 	font-family:helvetica, sans-serif;
+ 	color:#fff;
+ 	background-color:#222;
+ }
+ .outerborder{
+ 	border:1px solid #fff;
+ 	width:700px;
+ 	position:relative;
+ 	top:100px;
+ 	left:480px;
+ 	border-radius:10px;
+ }
+ .page{
+	margin:5px;
+	padding:5px 5px 20px 5px;
+	background:rgba(0,0,0,.7);
+	border-radius:10px;
+}
+.form_input{
+  text-align: center;
+}
+.topbar{
+	background:rgba(0,0,0,.7);
+	height:50px;
+	width:100%;
+	padding:33px 0 0 0;
+	position:fixed;
+	top:0;
+	left:0;
+  text-align: center;
+}
+.botbar{
+	background:rgba(0,0,0,.7);
+	height:35px;
+	width:100%;
+	position:fixed;
+	bottom:0;
+	left:0;
+  text-align: center;
+}
+.notes{
+  font-size: 75%;
+}
+.nav{
+  position: relative;
+  bottom: 7px;
+  text-align:center;
+}
+h1{
+  text-align: center;
+}
+hr{
+	position:relative;
+	background-color:#bbb;
+	width:80%;
+	height:2px;
+	border-width:0;
+}
+.smaller{
+  width:50%;
+}
+ul{
+	list-style: none;
+}
+li{
+	display: block;
+}
+a{
+	color:#fff;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}

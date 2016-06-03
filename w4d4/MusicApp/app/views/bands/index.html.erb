@@ -1,0 +1,15 @@
+<div class="topbar">
+  <%= link_to "NEW BAND", new_band_url, method: :get %>
+</div>
+
+<div class="outerborder">
+  <div class="page">
+    <h1>Bands</h1>
+    <hr>
+
+    <% @bands.each do |band| %>
+      <center><a href="<%= band_url(band) %>"><%= band.name %></a></center>
+    <% end %>
+
+  </div>
+</div>

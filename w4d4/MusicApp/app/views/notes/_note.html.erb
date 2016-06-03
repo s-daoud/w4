@@ -1,0 +1,10 @@
+<b><%= User.find(note.user_id).email %></b>
+<br>
+
+<%= note.body %>
+
+<% if User.find(note.user_id) == current_user %>
+  <%= button_to "Delete", "/tracks/#{note.track_id}/notes/#{note.id}", method: :delete %>
+<% end %>
+
+<hr class="smaller">

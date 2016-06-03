@@ -1,0 +1,23 @@
+<% if act == :new %>
+  <% action_url, button_text = bands_url, "Create!" %>
+<% else %>
+  <% action_url, button_text = "/bands/#{band.id}", "Update!" %>
+<% end %>
+
+<%= render "shared/errors" %>
+
+<form action="<%= action_url %>" method="post">
+  <% if act == :edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+  <%= auth_tag %>
+
+  <div class="form_input">
+    <label for="band_name">Name</label>
+    <input type="text" name="band[name]" value="<%= band.name %>" id="band_name">
+
+    <br><br>
+
+    <input type="submit" value="<%= button_text %>">
+  </div>
+</form>

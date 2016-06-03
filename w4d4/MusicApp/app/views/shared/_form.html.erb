@@ -1,0 +1,25 @@
+<% if act == :new %>
+  <% action_url, button_text = users_url, "Create!" %>
+<% else %>
+  <% action_url, button_text = session_url, "Log in!" %>
+<% end %>
+
+<%= render "shared/errors" %>
+
+<form action="<%= action_url %>" method="post">
+  <%= auth_tag %>
+  
+    <div class="form_input">
+      <label for="user_email">Email</label></td>
+      <input type="text" name="user[email]" value="<%= user.email %>" id="user_email">
+
+      <br><br>
+
+      <label for="user_password">Password</label>
+      <input type="password" name="user[password]" id="user_password">
+
+      <br><br>
+
+      <input type="submit" value="<%= button_text %>">
+    </div>
+</form>

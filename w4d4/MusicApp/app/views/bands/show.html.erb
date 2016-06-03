@@ -1,0 +1,27 @@
+<div class="topbar">
+  <%= link_to "<< BAND INDEX ", bands_url, method: :get %> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <%= link_to " NEW ALBUM ", "/bands/#{@band.id}/albums/new", method: :get %> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <%= link_to " EDIT ", edit_band_url, method: :get %> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <%= link_to " DELETE", "/bands/#{@band.id}", method: :delete %>
+</div>
+
+<div class="outerborder">
+  <div class="page">
+    <h1><%= @band.name %></h1>
+
+    <hr>
+
+    <h3><center>Albums<center></h3>
+
+    <% unless @band.albums.empty? %>
+      <% @band.albums.each do |album| %>
+        <center><a href="<%= album_url(album) %>"><%= album.name %> <%= "(#{album.album_type})" if album.album_type == "Live" %></a></center>
+      <% end %>
+    <% else %>
+      <center>None yet! Click below to add a new album</center>
+    <% end %>
+
+    <br><br>
+
+  </div>
+</div>

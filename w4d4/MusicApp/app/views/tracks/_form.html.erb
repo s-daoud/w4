@@ -1,0 +1,48 @@
+<% if act == :new %>
+  <% action_url, button_text = tracks_url, "Create!" %>
+<% else %>
+  <% action_url, button_text = "/tracks/#{track.id}", "Update!" %>
+<% end %>
+
+<%= render "shared/errors" %>
+
+<form action="<%= action_url %>" method="post">
+  <% if act == :edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+  <%= auth_tag %>
+  
+  <div class="form_input">
+    <label for="track_name">Name</label>
+    <input type="text" name="track[name]" value="<%= track.name %>" id="track_name">
+
+    <br><br>
+
+    <label for="album_of_track">From</label>
+    <select name="track[album_id]" id="album_of_track">
+      <% Album.all.each do |album| %>
+        <option value="<%= album.id %>"
+                <%= "selected" if album.id == a_id %>>
+                <%= album.name %></option>
+      <% end %>
+    </select>
+
+    <br><br>
+
+    <label for="type_of_track">Type</label>
+    <% Track::TYPES.each do |t_type| %>
+      <input type="radio" name="track[track_type]" value="<%= t_type %>"
+             <%= "checked" if track.track_type == t_type %>>
+      <%= t_type %>
+    <% end %>
+
+    <br><br>
+
+    <label for="track_lyrics">Lyrics</label>
+    <textarea name="track[lyrics]" id="track_lyrics"><%= track.lyrics %></textarea>
+
+    <br><br>
+
+    <input type="submit" value="<%= button_text %>">
+  </div>
+</form>

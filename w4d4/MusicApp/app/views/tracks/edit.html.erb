@@ -1,0 +1,7 @@
+<div class="outerborder">
+  <div class="page">
+    <h1>Edit <%= @track.name %></h1>
+
+    <%= render "form", { track: @track, act: :edit, a_id: @track.album_id } %>
+  </div>
+</div>

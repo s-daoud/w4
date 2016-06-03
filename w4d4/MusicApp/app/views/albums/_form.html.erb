@@ -1,0 +1,42 @@
+<% if act == :new %>
+  <% action_url, button_text = albums_url, "Create!" %>
+<% else %>
+  <% action_url, button_text = "/albums/#{album.id}", "Update!" %>
+<% end %>
+
+<%= render "shared/errors" %>
+
+<form action="<%= action_url %>" method="post">
+  <% if act == :edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+  <%= auth_tag %>
+
+  <div class="form_input">
+    <label for="album_name">Name</label>
+    <input type="text" name="album[name]" value="<%= album.name %>" id="album_name">
+
+    <br><br>
+    <label for="band_of_album">By</label>
+    <select name="album[band_id]" id="band_of_album">
+      <% Band.all.each do |band| %>
+        <option value="<%= band.id %>"
+                <%= "selected" if band.id == b_id %>>
+                <%= band.name %></option>
+      <% end %>
+    </select>
+
+    <br><br>
+
+    <label for="type_of_album">Type</label>
+    <% Album::TYPES.each do |a_type| %>
+      <input type="radio" name="album[album_type]" value="<%= a_type %>"
+             <%= "checked" if album.album_type == a_type %>>
+      <%= a_type %>
+    <% end %>
+
+    <br><br>
+
+    <input type="submit" value="<%= button_text %>">
+  </div>
+</form>
