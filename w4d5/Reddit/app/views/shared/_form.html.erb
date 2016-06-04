@@ -1,0 +1,23 @@
+<% if act == :new %>
+  <% action_url, button_text = users_url, "Create User" %>
+<% else %>
+  <% action_url, button_text = session_url, "Log in" %>
+<% end %>
+
+<%= render "shared/errors" %>
+
+<form action="<%= action_url %>" method="post">
+  <%= auth_token_helper %>
+
+  <label for="user_name">Username</label>
+  <input type="text" name="user[username]" id="user_name">
+
+  <br><br>
+
+  <label for="user_password">Password</label>
+  <input type="password" name="user[password]" id="user_password">
+
+  <br><br>
+
+  <input type="submit" value="<%= button_text %>">
+</form>

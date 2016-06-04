@@ -1,0 +1,38 @@
+<% if act == :new %>
+  <% action_url, button_text = posts_url, "Create Post" %>
+<% else %>
+  <% action_url, button_text = "/posts/#{post.id}", "Edit post" %>
+<% end %>
+
+<%= render "shared/errors" %>
+
+<form action="<%= action_url %>" method="post">
+  <% if act == :edit %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+  <%= auth_token_helper %>
+
+  <label for="post_title">Title</label>
+  <input type="text" name="post[title]" id="post_title" value="<%= post.title %>">
+
+  <br><br>
+
+  <label for="post_url">URL</label>
+  <input type="text" name="post[url]" id="post_url" value="<%= post.url %>">
+
+  <br><br>
+
+  <label for="post_content">Content</label>
+  <textarea name="post[content]" id="post_content"><%= post.content %></textarea>
+
+  <br><br>
+  <input type="hidden" name="post[author_id]" value="<%= current_user.id %>">
+
+  <input type="hidden" name="post[sub_ids][]" value="">
+    <% subreddits.each do |subreddit| %>
+      <input type="checkbox" name="post[sub_ids][]" value="<%= subreddit.id %>">
+      <%= subreddit.title %>
+    <% end %>
+
+  <input type="submit" value="<%= button_text %>">
+</form>

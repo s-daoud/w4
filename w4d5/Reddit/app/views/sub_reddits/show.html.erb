@@ -1,0 +1,15 @@
+<h1><%= @subreddit.title %></h1>
+<h3> <%= @subreddit.description %> </h3>
+
+<% if current_user.id == @subreddit.mod_id %>
+<%= link_to "Edit", edit_sub_reddit_url(@subreddit.id) %>
+<% end %>
+<br><br>
+<p>Posts:</p>
+<ul>
+  <% @subreddit.posts.each do |post| %>
+    <li><a href="<%= post_url(post) %>"><%= post.title %></a></li>
+  <% end %>
+</ul>
+
+<%= link_to "New Post!", new_sub_reddit_post_url(@subreddit.id) %>

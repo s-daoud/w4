@@ -1,0 +1,29 @@
+<% if act == :new %>
+  <% action_url, button_text = sub_reddits_url, "Create Subreddit" %>
+<% else %>
+  <% action_url, button_text = "/sub_reddits/#{subreddit.id}", "Edit subreddit" %>
+<% end %>
+
+<%= render "shared/errors" %>
+
+<form action="<%= action_url %>" method="post">
+  <% if act == :edit %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+  <%= auth_token_helper %>
+
+  <label for="sub_title">Title</label>
+  <input type="text" name="sub_reddit[title]" id="sub_title" value="<%= subreddit.title %>">
+
+  <br><br>
+
+  <label for="sub_desc">Description</label>
+  <textarea name="sub_reddit[description]" id="sub_desc"><%= subreddit.description %></textarea>
+
+  <br><br>
+  <% if subreddit.mod_id.nil? %>
+    <input type="hidden" name="sub_reddit[mod_id]" value="<%= current_user.id %>">
+  <% end %>
+
+  <input type="submit" value="<%= button_text %>">
+</form>

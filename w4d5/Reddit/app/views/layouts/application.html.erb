@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reddit</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<% if current_user %>
+  <%= button_to "Logout", "/session", method: :delete %>
+<% elsif request.env['PATH_INFO'] == "/session/new" || request.env['PATH_INFO'] == "/users/new"%>
+<% else %>
+  <%= button_to "Login", "/session/new", method: :get %>
+<% end %>
+<br>
+
+
+<%= link_to "Index", root_url %>
+
+<%= yield %>
+
+</body>
+</html>
