@@ -18,7 +18,7 @@ ol.directions-list {
     list-style: upper-roman;
 }
 
-header img {
+header > img {
     width: 100px;
 }
 
