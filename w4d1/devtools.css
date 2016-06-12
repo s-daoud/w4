@@ -30,3 +30,79 @@ ul li a {
 html {
     background-color: lightslategrey;
 }
+
+input {
+  cursor: pointer;
+  outline: none;
+}
+
+input:last-child {
+  background-color: gold;
+}
+
+input:last-child:hover {
+  -webkit-filter: brightness(90%);
+}
+
+ol li:nth-of-type(2n) {
+  background-color: whitesmoke;
+}
+
+h2 + .review {
+  border-top: 1px solid-black;
+}
+
+input[type="radio"] {
+  background-image: url(../assets/stars.png);
+}
+
+nav {
+  display: inline-block;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: block;
+  padding: 20px;
+}
+
+body {
+  width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  width: 700px;
+  display: inline-block;
+}
+
+aside {
+  width: 180px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.ingredients-list li {
+  margin: 15px 0;
+}
+
+.directions-list li {
+  margin: 15px 0;
+}
+
+input[type="text"], select {
+  display: block;
+  width: 175px;
+}
+
+select {
+  margin: 10px 0;
+  width: 180px;
+}
+
+textarea {
+  width: 350px;
+}
