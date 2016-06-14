@@ -4,10 +4,12 @@ body {
 
 h1 {
     font-size: 38px;
+    margin-bottom: 20px;
 }
 
 h2 {
     font-size: 32px;
+    margin-bottom: 10px;
 }
 
 ul.ingredients-list {
@@ -18,8 +20,14 @@ ol.directions-list {
     list-style: upper-roman;
 }
 
-header > img {
-    width: 100px;
+img {
+    float: left;
+}
+
+.cf:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 ul li a {
@@ -57,7 +65,7 @@ input[type="radio"] {
 }
 
 nav {
-  display: inline-block;
+  float: right;
 }
 
 nav ul li {
@@ -70,18 +78,18 @@ nav ul li a {
 }
 
 body {
-  width: 900px;
+  width: 80%;
   margin: 0 auto;
 }
 
 section {
-  width: 700px;
+  width: 50%;
   display: inline-block;
 }
 
 aside {
-  width: 180px;
-  display: inline-block;
+  width: 25%;
+  float: left;
   margin-right: 15px;
 }
 
